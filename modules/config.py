@@ -31,8 +31,8 @@ if os.path.exists("config.json"):
         config = json.load(f)
 else:
     config = {
-        server_port: int(os.environ.get('PORT')),
-        openai_api_key: os.environ.get('OPENAI_API_KEY'),
+        'server_port': os.environ.get('PORT'),
+        'openai_api_key': os.environ.get('OPENAI_API_KEY'),
     }
 
 language = config.get("language", "auto")
