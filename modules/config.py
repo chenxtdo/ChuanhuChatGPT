@@ -30,7 +30,10 @@ if os.path.exists("config.json"):
     with open("config.json", "r", encoding='utf-8') as f:
         config = json.load(f)
 else:
-    config = {}
+    config = {
+        server_port: int(os.environ.get('PORT')),
+        openai_api_key: os.environ.get('OPENAI_API_KEY'),
+    }
 
 language = config.get("language", "auto")
 
