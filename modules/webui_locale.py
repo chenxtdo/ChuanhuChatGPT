@@ -8,7 +8,9 @@ class I18nAuto:
             with open("config.json", "r", encoding='utf-8') as f:
                 config = json.load(f)
         else:
-            config = {}
+            config = {
+                "language": "zh_CN"
+            }
         language = config.get("language", "auto")
         if language == "auto":
             language = locale.getdefaultlocale()[0] # get the language code of the system (ex. zh_CN)
